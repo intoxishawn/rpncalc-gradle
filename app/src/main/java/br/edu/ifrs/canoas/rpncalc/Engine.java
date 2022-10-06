@@ -5,6 +5,8 @@ import java.util.Arrays;
 import java.util.List;
 import java.util.Stack;
 
+import java.lang.Math;
+
 public class Engine {
     private Stack<Double> pilha;
     private List<String> operacoes = Arrays.asList("+","-","*","/","limpar","ajuda","sair","raiz");
@@ -46,15 +48,36 @@ public class Engine {
     }
 
     void subtracao() {
-        System.out.println("Não implementado ainda!");
+        if (pilha.size() < 2) {
+            poucosOperandos();
+        } else {
+            Double a, b;
+            b = pilha.pop();
+            a = pilha.pop();
+            pilha.push(a-b);
+        }      
     }
 
     void multiplicacao() {
-        System.out.println("Não implementado ainda!");
+        if (pilha.size() < 2) {
+            poucosOperandos();
+        } else {
+            Double a, b;
+            b = pilha.pop();
+            a = pilha.pop();
+            pilha.push(a*b);
+        }   
     }
 
     void divisao() {
-        System.out.println("Não implementado ainda!");
+        if (pilha.size() < 2) {
+            poucosOperandos();
+        } else {
+            Double a, b;
+            b = pilha.pop();
+            a = pilha.pop();
+            pilha.push(a/b);
+        }   
     }
 
     void limpar() {
@@ -62,7 +85,13 @@ public class Engine {
     }
 
     void raizQuadrada() {
-        System.out.println("Não implementado ainda!");
+        if (pilha.size() < 1) {
+            poucosOperandos();
+        } else {
+            Double a;
+            a = pilha.pop();
+            pilha.push(Math.sqrt(a));
+        }   
     }
 
     public void operando(Double numero) {
