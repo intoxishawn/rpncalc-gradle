@@ -80,4 +80,70 @@ public class EngineTest {
         assertEquals(1, pilha.size(), "Deveria haver exatamente um operando na pilha.");
         assertEquals(10.0, pilha.pop(), "O mesmo operando deveria estar no topo da pilha.");
     }
+
+    @Test
+    @DisplayName("Diminuir um número.")
+    void diminuirUmNumero() {
+        engine.operando(10.0);
+        engine.operar("-");
+        assertEquals(1, pilha.size(), "Deveria haver exatamente um operando na pilha.");
+        assertEquals(10.0, pilha.pop(), "O mesmo operando deveria estar no topo da pilha.");
+    }
+
+    @Test
+    @DisplayName("Diminuir dois números.")
+    void diminuirDoisNumeros() {
+        engine.operando(10.0);
+        engine.operando(5.0);
+        engine.operar("-");
+        assertEquals(1, pilha.size(), "Deveria haver exatamente um operando na pilha.");
+        assertEquals(5.0, pilha.pop(), "A subtracao dos operandos deveriam estar no topo da pilha.");
+    }
+
+    @Test
+    @DisplayName("Multiplicar dum número.")
+    void multiplicarUmNumero() {
+        engine.operando(10.0);
+        engine.operar("*");
+        assertEquals(1, pilha.size(), "Deveria haver exatamente um operando na pilha.");
+        assertEquals(10.0, pilha.pop(), "O mesmo operando deveria estar no topo da pilha.");
+    }
+
+    @Test
+    @DisplayName("Multiplicar dois números.")
+    void multiplicarDoisNumeros() {
+        engine.operando(10.0);
+        engine.operando(5.0);
+        engine.operar("*");
+        assertEquals(1, pilha.size(), "Deveria haver exatamente um operando na pilha.");
+        assertEquals(50.0, pilha.pop(), "A multiplicao dos operandos deveriam estar no topo da pilha.");
+    }
+
+    @Test
+    @DisplayName("Dividir um número.")
+    void dividirUmNumero() {
+        engine.operando(10.0);
+        engine.operar("/");
+        assertEquals(1, pilha.size(), "Deveria haver exatamente um operando na pilha.");
+        assertEquals(10.0, pilha.pop(), "O mesmo operando deveria estar no topo da pilha.");
+    }
+
+    @Test
+    @DisplayName("Dividir dois números.")
+    void dividirDoisNumeros() {
+        engine.operando(10.0);
+        engine.operando(5.0);
+        engine.operar("/");
+        assertEquals(1, pilha.size(), "Deveria haver exatamente um operando na pilha.");
+        assertEquals(2.0, pilha.pop(), "A divisao dos operandos deveriam estar no topo da pilha.");
+    }
+
+    @Test
+    @DisplayName("Raiz quadrada de um número.")
+    void raizQuadradaDeUmNumero() {
+        engine.operando(16.0);
+        engine.operar("raiz");
+        assertEquals(1, pilha.size(), "Deveria haver exatamente um operando na pilha.");
+        assertEquals(4.0, pilha.pop(), "A raiz quadrada do operando deveria estar no topo da pilha.");
+    }
 }
