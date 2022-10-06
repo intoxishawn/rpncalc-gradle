@@ -76,6 +76,10 @@ public class Engine {
             Double a, b;
             b = pilha.pop();
             a = pilha.pop();
+            if(b == 0 ){
+                divisaoPorZero();
+                return;
+            }
             pilha.push(a/b);
         }   
     }
@@ -90,6 +94,10 @@ public class Engine {
         } else {
             Double a;
             a = pilha.pop();
+            if(a < 0) {
+                raizComplexa();
+                return;
+            }
             pilha.push(Math.sqrt(a));
         }   
     }
